@@ -1,0 +1,9 @@
+/.idea/*
+
+/server_files/.idea/*
+/server_files/node_modules/*
+/server_files/db.json
+
+/test_files/__pycache__/*
+/test_files/.idea/*
+/test_files/venv/*
