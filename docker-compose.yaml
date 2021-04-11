@@ -1,0 +1,21 @@
+version: '3'
+services:
+  testing:
+    build:
+      context: ./test_files
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8090:8089
+    links:
+      - db
+    command: locust -f main.py
+
+  db:
+    build:
+      context: ./server_files
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 3020:3020
+    command: json-server --host 0.0.0.0 --port 3020 --watch db.json
